@@ -98,11 +98,11 @@ Now you will see the backend running in <http://127.0.0.1:8000/>
 
 ## Starting the Frontend
 
-With all the necessary packages installed, you can run the dev server of vue:
+With all the necessary packages installed, you can run the dev server of Vue. Open another terminal session:
 ```shell
 cd frontend
 npm run dev
 ```
-Now you will see the vue dev server running in <http://localhost:5173/>
+Now you will see the Vue dev server running in <http://localhost:5173/>
 
 ![](../imgs/vue-terminal.png)

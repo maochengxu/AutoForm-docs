@@ -13,6 +13,7 @@ The Augmented Quote Management System is primarily divided into two major parts:
 The backend is built using Django and Django REST Framework. This part of the system is responsible for defining models, APIs, handling webhooks, and generating PDFs. Data is stored in a MariaDB database. The backend has the following structure:
 
 - `backend/`: The root directory for the backend.
+    - `backend/`: The Python package for the backend.
     - `betterform/`: Defines the models and APIs using Django and Django REST Framework.
     - `createpdf/`: Utilizes Jinja and WeasyPrint to create PDF files.
     - `monday/`: Handles the monday.com API to receive webhooks and initialize the quote process.
