@@ -172,6 +172,14 @@ graph LR
 
 10. Add tmp dir for pdf
 
+    ```
+    - backend
+        - createpdf
+            - assets
+                - tmp
+                    - quotes
+                    - invoices
+    ```
 
 
 ### 3. Frontend
