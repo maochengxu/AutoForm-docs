@@ -28,7 +28,7 @@ Let's look at the directory structure of the frontend:
         - `App.vue`: The root component of the Vue.js application.
         - `main.ts`: The entry point of the Vue.js application.
         - `router.ts`: The router of the Vue.js application.
-        - `types.ts`: The type definitions for the Vue.js application.
+        - `types.d.ts`: The type definitions for the Vue.js application.
     - `.env.development`: Contains the environment variables for development.
     - `.env.production`: Contains the environment variables for production.
 
