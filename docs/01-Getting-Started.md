@@ -30,20 +30,26 @@ git clone git@github.com:maochengxu/AutoForm.git
 ## Setting Up the Environment
 
 1. Navigate to the root path of the project:
+
     ```shell
     cd <path-to-the-project>
     ```
+
 2. Install the required Python packages. The necessary packages are listed in the `environment.yml` and `requirements.txt` files located in the root path of the project. Run the following commands to install these packages:
+
     ```shell
     conda env create -f environment.yml
     pip install -r requirements.txt
     ```
+
 3. Install mysqlclient python package and weasyprint.
+
     > mysqlclient: <https://github.com/PyMySQL/mysqlclient#install>
 
     > weasyprint: <https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation>
 
 4. Create database
+
     ```sql
     CREATE DATABASE betterform;
     CREATE USER 'xxxxx'@'localhost' IDENTIFIED BY 'xxxxx';
@@ -51,7 +57,7 @@ git clone git@github.com:maochengxu/AutoForm.git
     FLUSH PRIVILEGES;
     EXIT;
     ```
-    Then the settings in the backend/backend/settings/base.py should be changed.
+    Then the settings in `backend/backend/settings/base.py` should be changed.
 
 5. Create admin user for Django
 
@@ -62,6 +68,15 @@ git clone git@github.com:maochengxu/AutoForm.git
     ```shell
     cd frontend
     npm install
+    ```
+
+7. Add the .env file for development
+
+    In the frontend root folder, add a `.env.development` file with:
+
+    ```
+    VITE_APP_API_BASE_URL=http://127.0.0.1:8000
+    VITE_APP_FORM_BASE_URL=http://localhost:5173
     ```
 
 ## Starting the Backend

@@ -1,12 +1,35 @@
 ---
 layout: default
 title: Deployment
-nav_order: 7
+nav_order: 6
 ---
 
 # Deployment
 
-## 1. System
+## Overview
+
+Setting up the production environment can be full of surprises and jumpscares. The following steps are replicable on a Debian 11 machine with no pre-installed packages or software. Docker could possibly be a better solution for deployment.
+
+Different from the development environment, the production environment uses the following technologies:
+
+- [Nginx](https://www.nginx.com/): A web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
+- [Gunicorn](https://gunicorn.org/): A Python WSGI HTTP Server for UNIX.
+
+The following diagram illustrates the client-server architecture of the application.
+
+```mermaid
+graph LR
+  Client[Client Browser] -->|HTTP| Nginx
+  Nginx -->|Reverse Proxy| Gunicorn
+  Nginx -->|Serves static files| Vue[Vue.js]
+  Gunicorn -->|WSGI| Django[Django]
+  Django -->|SQL| DB[MariaDB]
+  Vue -->|HTTP/Ajax| Django
+```
+
+## Deployment Steps
+
+### 1. System
 
 1. Install zsh, oh my zsh
 
@@ -41,7 +64,7 @@ nav_order: 7
 
 
 
-## 2. Backend
+### 2. Backend
 
 1. Create virtual env
 
@@ -151,7 +174,7 @@ nav_order: 7
 
 
 
-## 3. Frontend
+### 3. Frontend
 
 1. Install nvm
 
@@ -193,7 +216,7 @@ nav_order: 7
 
 
 
-## 4. Network
+### 4. Network
 
 1. Install Nginx
 
@@ -337,7 +360,7 @@ nav_order: 7
 
 
 
-## 5. Debug
+### 5. Debug
 
 - Check the Nginx process logs: `sudo journalctl -u nginx`
 - Check the Nginx access logs: `sudo less /var/log/nginx/access.log`

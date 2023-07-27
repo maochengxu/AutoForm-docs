@@ -25,3 +25,6 @@ callouts:
   warning:
     title: Warning
     color: red
+
+mermaid:
+  version: "10.3.0"
