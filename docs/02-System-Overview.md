@@ -6,7 +6,37 @@ nav_order: 3
 
 # System Overview
 
-The Augmented Quote Management System is primarily divided into two major parts: the backend and the frontend.
+## Automations
+
+The automations integrated into the system primarily focus on streamlining the generation of Deals (Quotes), marking the commencement of the sales process. Initially, quote creation was a tedious task managed on a Monday.com board, where the process was triggered via a button leading to a Monday.com App. This design, however, stored all information and intermediate variables directly on the board, complicating the process of navigation and access to crucial information.
+
+The current system initiates when the user creates a new item on the designated board. This action triggers a webhook that sends a new record to the system database automatically. Subsequently, a link to the form specific to the newly created item is posted on the Monday.com board, granting users direct access to the form through this link. Notably, the system uses the Monday ID to uniquely identify items in accordance with its design.
+
+To enhance clarity and improve efficiency, the system incorporates the following automations:
+
+### 1. Form Design
+
+- The creation date is defaulted to "today".
+- New contacts or products can be directly added via the form, prompting updates in both the database and the corresponding Monday.com board.
+- Detailed information for each quote is automatically displayed upon opening the form for modification.
+- Prices for kits are auto-filled during product input.
+- Calculations are displayed in real-time as the form is being populated, including:
+  - Expiry date
+  - Item-wise subtotal price
+  - Quote subtotal price
+  - Post-discount price
+  - Tax value
+  - Total quote price
+- Existing contact information is auto-populated upon selection.
+- The backend database automatically updates upon form submission.
+
+### 2. Interaction with Monday.com
+
+- When a new item is created on the dedicated board, a webhook is sent from Monday.com, leading to the creation of a corresponding record in the database.
+- After the backend creation of the new item, a link to the form is sent to the dedicated board.
+- If a contact's detailed information undergoes changes, both the backend and Monday.com are updated accordingly.
+- Upon form submission, a PDF file is automatically generated and uploaded to the Monday.com board.
+- The Monday.com boards are updated automatically when the form is submitted.
 
 ## Backend
 
