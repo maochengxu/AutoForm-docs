@@ -59,16 +59,16 @@ The `Quotes` table stores quote information.
 | contact         | ForeignKey    | References `Contacts.id`, Nullable    |
 | mid             | CharField     | Max length: 20, Unique                |
 | quote_id        | CharField     | Max length: 100, Nullable, Unique     |
-| date            | DateField     | Auto add current date, Nullable       |
-| custom_quote_to | CharField     | Max length: 200, Nullable             |
-| validity_period | PositiveIntegerField | Nullable                        |
+| date            | DateField     | Nullable                              |
+| custom_quote_to | TextField     | Nullable                              |
+| validity_period | PositiveIntegerField | Nullable                       |
 | deal_type       | CharField     | Max length: 10, Nullable              |
 | product         | ManyToManyField | Through `QuoteProduct`, Nullable    |
 | currency        | CharField     | Max length: 3, Nullable               |
 | discount        | DecimalField  | Max digits: 10, Decimal places: 2, Nullable |
 | shipment_cost   | DecimalField  | Max digits: 10, Decimal places: 2, Nullable |
 | tax             | DecimalField  | Max digits: 10, Decimal places: 2, Nullable |
-| price_total     | DecimalField  | Max digits: 10, Decimal places: 2, Nullable |
+| price_total     | DecimalField  | Max digits: 60, Decimal places: 2, Nullable |
 
 ### QuoteProduct
 

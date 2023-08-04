@@ -55,6 +55,9 @@ The frontend is built using Vue.js with TypeScript and the Ant Design Vue UI lib
 - `frontend/`: The root directory for the frontend.
     - `src/`: Contains the source files for the Vue.js application.
         - `components/`: Contains the Vue.js components used in the application, which include:
+            - `ModalForms/`: Contains the modal form components used in the quote form to create new contact or product.
+                - `ContactModal.vue`: The modal form component for creating contacts.
+                - `ProductModal.vue`: The modal form component for creating products.
             - `QuoteForm.vue`: The form component for creating quotes.
             - `InvoiceForm.vue`: The form component for creating invoices.
             - `ContactForm.vue`: The form component for managing contact information.
